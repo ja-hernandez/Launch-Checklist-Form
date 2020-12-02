@@ -57,18 +57,22 @@ function init () {
       if (!(isNaN(Number(pilotName.value)))) {
             alert("Please enter a string and not numbers for Pilot Name");
             event.preventDefault();
+            return;
       }
       if (!(isNaN(Number(copilotName.value)))) {
          alert("Please enter a string and not numbers for Copilot Name");
          event.preventDefault();
+         return;
       }
       if (isNaN(fuelLevel.value)) {
             alert ("Please enter a number for fuel level");
             event.preventDefault();
+            return;
          }
        if (isNaN(cargoMass.value)) {
             alert("Please enter a number for cargo mass");
             event.preventDefault();
+            return;
          }
       faultyItemsUpdate(event);
       event.preventDefault();
@@ -108,7 +112,8 @@ function init () {
          event.preventDefault();
       }
       else {
-         launchStatus.innerText = "Shuttle is ready for launch"; 
+         launchStatus.innerText = "Shuttle is ready for launch";
+         faultyDiv.style.visibility = 'hidden';
          launchStatus.style.color = "green";
       }
    // event.preventDefault();
